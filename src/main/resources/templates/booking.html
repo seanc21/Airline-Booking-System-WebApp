@@ -1,0 +1,90 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Sign Up - Beyond's Airline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/booking.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Beyond's Airline System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" th:href="@{/home}">Home</a>
+                    <a class="nav-link active" th:href="@{/home/booking_flight/create}">Booking</a>
+                    <a class="nav-link" th:href="@{/home/booked_flights}">Booked Flights</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+    <form class="form" th:action="@{/home/booking_flight/success}" th:object="${booking}"
+          method="post">
+        <div class="form__group">
+            <input type="text" placeholder="First Name" class="form__input" th:field="*{passFirstName}"
+                   required/>
+        </div>
+        <div class="form__group">
+            <input type="text" placeholder="Last Name" class="form__input" th:field="*{passLastName}"
+                   required/>
+        </div>
+        <div class="form__group">
+            <div class="col-75">
+                <select class="form__input" placeholder="Travel From" th:field="*{travelFrom}">
+                    <option value="Birmingham BHM">Birmingham BHM</option>
+                    <option value="Memphis MEM">Memphis MEM</option>
+                </select>
+            </div>
+<!--            <input type="text" placeholder="Travel From" class="form__input" th:field="*{travelFrom}"-->
+<!--                   required/>-->
+        </div>
+        <div class="form__group">
+            <div class="col-75">
+                <select class="form__input" placeholder="Travel To" th:field="*{travelTo}">
+                    <option value="Belize City BZE">Belize City BZE</option>
+                    <option value="New York JFKM">New York JFK</option>
+                </select>
+            </div>
+<!--            <input type="text" placeholder="Travel To" class="form__input" th:field="*{travelTo}"-->
+<!--                   required/>-->
+        </div>
+        <div class="form__group">
+            <h5>Departing</h5>
+            <input class="form__input" type="datetime-local" placeholder="mm/dd/yyyy"  th:field="*{dateOfDeparture}"
+                   required/>
+        </div>
+        <div class="form__group">
+            <h5>Returning </h5>
+            <input class="returning" type="datetime-local" placeholder="mm/dd/yyyy" th:field="*{dateOfReturning}"
+                   required/>
+        </div>
+        <button type="submit" class="btn">Book</button>
+    </form>
+</div>  
+
+<!--    <form action="/action_page.php">-->
+<!--        <div class="row">-->
+<!--            <div class="col-25">-->
+<!--                <label for="country">Country</label>-->
+<!--            </div>-->
+<!--       </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-25">-->
+<!--                <label for="subject">Subject</label>-->
+<!--            </div>-->
+<!--            <div class="col-75">-->
+<!--                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <input type="submit" value="Submit">-->
+<!--        </div>-->
+<!--    </form>-->
+</body>
+</html>

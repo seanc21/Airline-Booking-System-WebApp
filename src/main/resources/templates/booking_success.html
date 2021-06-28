@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking Success</title>
+    <link rel="stylesheet" type="text/css" href="/booking.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<div class="container text-center">
+    <h3>Your Booking has been processed!</h3>
+    <h4><a th:href="@{/home}">Click here to go back to home</a></h4>
+</div>
+<div class="container">
+    <div>
+        <h1>Revise Booking</h1>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Depart</th>
+                <th>Arrival</th>
+                <th>Departing</th>
+                <th>Returning</th>
+                <th>Edit</th>
+
+            </tr>
+            </thead>
+            <tbody>
+<!--            <tr th:each="user: ${bookingList}">-->
+                <td th:text="${booking.userId}">User ID</td>
+                <td th:text="${booking.passFirstName}">First Name</td>
+                <td th:text="${booking.passLastName}">Last Name</td>
+                <td th:text="${booking.travelFrom}">Depart</td>
+                <td th:text="${booking.travelTo}">Arrival</td>
+                <td th:text="${booking.dateOfDeparture}">Departing</td>
+                <td th:text="${booking.dateOfReturning}">Returning</td>
+                <td><a th:href="@{'/edit/' + ${booking.id}}">Edit</a></td>
+<!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>

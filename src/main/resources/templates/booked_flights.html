@@ -1,0 +1,87 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Booked Flights</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<!--<header>-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Beyond's Airline System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" th:href="@{/home}">Home</a>
+                <a class="nav-link" th:href="@{/home/booking_flight/create}">Booking</a>
+                <a class="nav-link active" th:href="@{/home/booked_flights}">Booked Flights</a>
+            </div>
+        </div>
+        <a class="nav-link ms-5" th:href="@{/logout}">Logout</a>
+    </div>
+</nav>
+<div class="container">
+    <div>
+        <h1>Booked Flights</h1>
+    </div>
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+<!--                <th>User ID</th>-->
+<!--                <th>E-mail</th>-->
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Depart</th>
+                <th>Arrival</th>
+                <th>Departing</th>
+                <th>Returning</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="detail: ${bookedList}">
+<!--                <td th:text="${booking.id}">User ID</td>-->
+<!--                <td th:text="${booking.email}">E-mail</td>-->
+                <td th:text="${detail.passFirstName}">First Name</td>
+                <td th:text="${detail.passLastName}">Last Name</td>
+                <td th:text="${detail.travelFrom}">Depart</td>
+                <td th:text="${detail.travelTo}">Arrival</td>
+                <td th:text="${detail.dateOfDeparture}">Departing</td>
+                <td th:text="${detail.dateOfReturning}">Returning</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<div class="container">-->
+<!--    <div>-->
+<!--        <h1>List of Users</h1>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <table class="table table-striped table-bordered">-->
+<!--            <thead class="thead-dark">-->
+<!--            <tr>-->
+<!--                <th>User ID</th>-->
+<!--                <th>E-mail</th>-->
+<!--                <th>First Name</th>-->
+<!--                <th>Last Name</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr th:each="user: ${bookingList}">-->
+<!--                <td th:text="${booking.userId}">User ID</td>-->
+<!--                <td th:text="${booking.travelFrom}">E-mail</td>-->
+<!--                <td th:text="${booking.travelTo}">First Name</td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+<!--</div>-->
+</body>
+</html>

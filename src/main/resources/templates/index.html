@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Spring Boot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beyond's Airline</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
 <body>
-    <h1>Spring Boot</h1>
+<!--    <header><div th:replace="~{fragments/navbar :: navbar}"></div></header>-->
+    <header>
+        <div class="main">
+            <nav>
+                <ul>
+                    <h2 id="title">Beyond's Airline System</h2>
+                    <li><a id="green-button" th:href="@{/register}">Sign Up</a></li>
+                    <li><a id="blue-button" th:href="@{/login}">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <img id="image-bg" src="https://g.foolcdn.com/editorial/images/447890/boeing-737-max-airplane-source-ba.jpg">
+    <h2 id="title-description">"Fly like it's your last time"</h2>
+    <div id="bar"></div>
+    <div class="content-block">
+        <p>
+            <br>
+            <br>
+        </p>
+        <div>BEYOND'S CUSTOMER EXPERIENCE</div>
+        <div id="description">Supporting You While Making Your Journey</div>
+    </div>
+    <div class="cards">
+        <!--card-->
+        <div class="card">
+            <img src="https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-584.jpg" alt="Avatar" style="width: 100%; height: 230px !important;">
+            <div class="info-container">
+                <h4 class="card-title"><b>Luggage</b></h4>
+                <p>Bring the things you love with you. Carry gifts for families and friends around the world with
+                    Beyond's Airline!</p>
+            </div>
+        </div>
+        <!--card-->
+        <div class="card">
+            <img src="https://www.gannett-cdn.com/presto/2019/08/14/USAT/62ffbbc3-91af-48aa-86f3-b34c547438a6-GettyImages-526086097.jpg?width=660&height=440&fit=crop&format=pjpg&auto=webp" alt="Avatar" style="width: 100%; height: 230px !important;">
+            <div class="info-container">
+                <h4 class="card-title"><b>Seats</b></h4>
+                <p>Sit comfortably while going to your favorite places and enjoying your favorite movies while eat
+                    provide snack by us.</p>
+            </div>
+        </div>
+        <!--card-->
+        <div class="card">
+            <img src="https://www.verywellhealth.com/thmb/dHyDU0_rx2ctoZ2TS2I2G36Fahw=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1271604827-9e48547b7193490c8d2b14911caa0558.jpg" alt="Avatar" style="width: 100%; height: 230px !important;">
+            <div class="info-container">
+                <h4 class="card-title"><b>COVID-19</b></h4>
+                <p>After each flight we sanitize our planes and provide hand sanitizers for you because we care
+                    about your safety.</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgb(51, 51, 51);
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    line-height: 64px;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+#green-button {
+    background-color: #47cf73;
+}
+
+#green-button:hover {
+    background-color: #2fb65a;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#title {
+    color: white;
+    padding-right: 700px;
+    padding-top: 16px;
+}
+
+#image-bg {
+    padding-top: 10px;
+    width: 1440px;
+}
+
+#title-description {
+    position: absolute;
+    bottom: 80px;
+    left: 900px;
+    color: white;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+#bar {
+     position: relative;
+     margin: -4px 0;
+     padding: .75rem 0;
+     width: 100%;
+     background: rgb(51, 51, 51);
+}
+
+.content-block {
+    text-align: center;
+}
+
+#description {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 40px 15px 30px 15px;
+}
+
+.card-title {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.info-container {
+    margin-top: -4px !important;
+    padding: 2px 16px 15px 16px;
+    background-color: rgb(246, 246, 247);
+}
+
+.card {
+    flex: 0 1 24%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
