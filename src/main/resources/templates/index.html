@@ -5,20 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Beyond's Airline</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
 <!--    <header><div th:replace="~{fragments/navbar :: navbar}"></div></header>-->
-    <header>
-        <div class="main">
-            <nav>
-                <ul>
-                    <h2 id="title">Beyond's Airline System</h2>
-                    <li><a id="green-button" th:href="@{/register}">Sign Up</a></li>
-                    <li><a id="blue-button" th:href="@{/login}">Login</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="#">Beyond's Airline Reservation System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                </div>
+            </div>
+            <a class="green-button" th:href="@{/register}">Sign Up</a>
+            <a class="blue-button" th:href="@{/login}">Login</a>
         </div>
-    </header>
+    </nav>
+<!--    <header>-->
+<!--        <div class="main">-->
+<!--            <nav>-->
+<!--                <ul>-->
+<!--                    <h2 id="title">Beyond's Airline System</h2>-->
+<!--                    <li><a id="" th:href="@{/register}">Sign Up</a></li>-->
+<!--                    <li><a id="blue-button" th:href="@{/login}">Login</a></li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+<!--        </div>-->
+<!--    </header>-->
     <img id="image-bg" src="https://g.foolcdn.com/editorial/images/447890/boeing-737-max-airplane-source-ba.jpg">
     <h2 id="title-description">"Fly like it's your last time"</h2>
     <div id="bar"></div>

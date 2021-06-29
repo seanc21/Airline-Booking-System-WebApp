@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>List Users</title>
+    <title>Beyond's Airline</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
@@ -9,7 +9,7 @@
 <!--<header>-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Beyond's Airline System</a>
+            <a class="navbar-brand ms-3" href="#">Beyond's Airline System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,47 @@
 <!--        </nav>-->
 <!--    </div>-->
 <!--</header>-->
-<div class="container">
+    <img id="image-bg-home" src="https://www.seatmaestro.com/wp-content/uploads/2015/04/HealthyAirplaneFood-e1429470812275.jpg">
+    <h2 id="title-description-home">"Ready to fly, Because we are!"</h2>
+    <div id="bar"></div>
+    <div class="content-block">
+        <p>
+            <br>
+            <br>
+        </p>
+        <div>BEYOND'S CUSTOMER EXPERIENCE</div>
+        <div id="description">Supporting You While Making Your Journey</div>
+    </div>
+    <div class="cards">
+        <!--card-->
+        <div class="card">
+            <img src="https://previews.123rf.com/images/geckophotos/geckophotos1802/geckophotos180200968/96230737-white-toy-plane-on-the-world-map-background-traveling-tourism-international-flights-with-flying-airp.jpg" alt="Avatar" style="width: 100%; height: 230px !important;">
+            <div class="info-container">
+                <h4 class="card-title"><b>Book Flight</b></h4>
+                <p>Don't waste time book your flight right now!</p>
+            </div>
+            <a th:href="@{/home/booking_flight/create}" class="arrow right">Get Started!</a>
+        </div>
+        <!--card-->
+        <div class="card">
+            <img src="https://www.gannett-cdn.com/presto/2019/08/14/USAT/62ffbbc3-91af-48aa-86f3-b34c547438a6-GettyImages-526086097.jpg?width=660&height=440&fit=crop&format=pjpg&auto=webp" alt="Avatar" style="width: 100%; height: 230px !important;">
+            <div class="info-container">
+                <h4 class="card-title"><b>Booked Flights</b></h4>
+                <p>View all the trips you have booked with us!</p>
+            </div>
+            <a th:href="@{/home/booked_flights}" class="arrow right">Get Started!</a>
+        </div>
+        <!--card-->
+        <div class="card">
+            <img src="https://www.verywellhealth.com/thmb/dHyDU0_rx2ctoZ2TS2I2G36Fahw=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1271604827-9e48547b7193490c8d2b14911caa0558.jpg" alt="Avatar" style="width: 100%; height: 230px !important;">
+            <div class="info-container">
+                <h4 class="card-title"><b>Check-IN</b></h4>
+                <p>After each flight we sanitize our planes and provide hand sanitizers for you because we care
+                    about your safety.</p>
+            </div>
+            <a href="#" class="arrow right">Get Started!</a>
+        </div>
+    </div>
     <div>
         <h1>List of Users</h1>
     </div>
@@ -59,32 +99,5 @@
             </tbody>
         </table>
     </div>
-</div>
-
-<!--<div class="container">-->
-<!--    <div>-->
-<!--        <h1>List of Users</h1>-->
-<!--    </div>-->
-
-<!--    <div>-->
-<!--        <table class="table table-striped table-bordered">-->
-<!--            <thead class="thead-dark">-->
-<!--            <tr>-->
-<!--                <th>User ID</th>-->
-<!--                <th>E-mail</th>-->
-<!--                <th>First Name</th>-->
-<!--                <th>Last Name</th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr th:each="user: ${bookingList}">-->
-<!--                <td th:text="${booking.userId}">User ID</td>-->
-<!--                <td th:text="${booking.travelFrom}">E-mail</td>-->
-<!--                <td th:text="${booking.travelTo}">First Name</td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
-<!--    </div>-->
-<!--</div>-->
 </body>
 </html>

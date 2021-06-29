@@ -4,50 +4,36 @@
     margin: 0;
 }
 
-.main {
-    max-width: 1200px;
-    margin: auto;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    background: rgb(51, 51, 51);
-    z-index: 2;
-}
-
-nav ul {
-    list-style: none;
-    float: right;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
+.green-button {
     color: #fff;
-    padding: 12px 25px;
+    padding: 12px 15px;
     text-decoration: none;
-    line-height: 64px;
+    line-height: 14px;
     font-size: 16px;
     border-radius: 6px;
     margin-right: 10px;
-}
-
-nav ul li a:hover {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-}
-
-#green-button {
     background-color: #47cf73;
 }
 
-#green-button:hover {
+.green-button:hover {
     background-color: #2fb65a;
+    color: #fff;
+}
+
+.blue-button {
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    line-height: 14px;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-right: 10px;
+    background-color: #24a0ed;
+}
+
+.blue-button:hover {
+    background-color: #1183ca;
+    color: #fff;
 }
 
 .container {
@@ -61,7 +47,11 @@ nav ul li a:hover {
 }
 
 #image-bg {
-    padding-top: 10px;
+    width: 1440px;
+}
+
+#image-bg-home {
+    margin-top: -210px;
     width: 1440px;
 }
 
@@ -69,6 +59,15 @@ nav ul li a:hover {
     position: absolute;
     bottom: 80px;
     left: 900px;
+    color: white;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+#title-description-home {
+    position: absolute;
+    bottom: 300px;
+    left: 550px;
     color: white;
     font-size: 40px;
     font-family: 'Dancing Script', cursive;
@@ -115,5 +114,50 @@ nav ul li a:hover {
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.arrow {
+  position: relative;
+  color: #355174;
+  font-family: Arial sans-serif;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  margin: 0 25px 0 120px;
+}
+
+.arrow:before, .arrow:after {
+  content:"";
+  background: #033469;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+  display: block;
+  height: 0.5em;
+  position: absolute;
+  right: 0;
+  width: 1em;
+}
+
+.arrow.right:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.arrow.right:before {
+  top: .9em;
+}
+
+.arrow.right:after {
+    bottom: 0.66em;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.arrow:hover, #arrow:focus {
+  color: #033469;
+}
+
+.arrow:hover:before, .arrow:hover:after,  .arrow:focus:before, .arrow:focus:after {
+  background: #355174;
 }
 
