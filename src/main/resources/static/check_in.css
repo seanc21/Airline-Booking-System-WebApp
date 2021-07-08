@@ -1,0 +1,32 @@
+input[type=text] {
+  padding:10px;
+  border:0;
+  margin:10px 0;
+  box-shadow:0 0 25px 8px rgba(0,0,0,0.06);
+  border-radius:10px;
+  background-color: #eee;
+}
+
+.border-customized-input {
+   border: 2px solid #eee;
+   color: #eee;
+}
+
+.border-removed-input {
+  border: 0;
+}
+
+h1 {
+    font-weight: bold;
+    margin-top: 250px !important;
+    margin-left: 540px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.form-group {
+    margin-left: 615px;
+}
+
+body {
+     background: linear-gradient(#8693ab, #bdd4e7);
+}

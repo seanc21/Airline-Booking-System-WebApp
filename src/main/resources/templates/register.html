@@ -8,9 +8,6 @@
 </head>
 <body>
 <div class="container">
-<!--    <div>-->
-<!--        <h1>User Registration - Sign Up</h1>-->
-<!--    </div>-->
     <div class="user">
         <header class="user__header">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
@@ -18,8 +15,7 @@
             <h1 class="user__description">Sign your way into paradise!</h1>
         </header>
 
-        <form class="form" th:action="@{/process_register}" th:object="${user}"
-              method="post">
+        <form class="form" th:action="@{/process_register}" th:object="${user}" method="post">
             <div class="form__group">
                 <input type="text" placeholder="First Name" class="form__input" th:field="*{firstName}"
                        required minlength="2" maxlength="20" />
@@ -42,47 +38,6 @@
             <button type="submit" class="btn">Sign Up</button>
         </form>
     </div>
-
-
-
-<!--    <form th:action="@{/process_register}" th:object="${user}"-->
-<!--          method="post" style="max-width: 600px; margin: 0 auto;">-->
-<!--        <div class="m-3">-->
-<!--            <div class="form-group row">-->
-<!--                <label class="col-4 col-form-label">E-mail: </label>-->
-<!--                <div class="col-8">-->
-<!--                    <input type="email" th:field="*{email}" class="form-control" required />-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="form-group row">-->
-<!--                <label class="col-4 col-form-label">Password: </label>-->
-<!--                <div class="col-8">-->
-<!--                    <input type="password" th:field="*{password}" class="form-control"-->
-<!--                           required minlength="6" maxlength="10"/>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="form-group row">-->
-<!--                <label class="col-4 col-form-label">First Name: </label>-->
-<!--                <div class="col-8">-->
-<!--                    <input type="text" th:field="*{firstName}" class="form-control"-->
-<!--                           required minlength="2" maxlength="20"/>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="form-group row">-->
-<!--                <label class="col-4 col-form-label">Last Name: </label>-->
-<!--                <div class="col-8">-->
-<!--                    <input type="text" th:field="*{lastName}" class="form-control"-->
-<!--                           required minlength="2" maxlength="20" />-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <button type="submit" class="btn btn-primary">Sign Up</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </form>-->
 </div>
 </body>
 </html>

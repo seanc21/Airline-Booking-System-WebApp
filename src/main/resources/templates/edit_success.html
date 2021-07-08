@@ -26,23 +26,21 @@
                 <th>Returning</th>
                 <th>Confirmation Number</th>
                 <th>Edit</th>
-
             </tr>
             </thead>
-            <tbody th:object="${flight}">
-<!--            <tr th:each="user: ${bookingList}">-->
-                <td th:text="${flight.passFirstName}">First Name</td>
-                <td th:text="${flight.passLastName}">Last Name</td>
-                <td th:text="${flight.travelFrom}">Depart</td>
-                <td th:text="${flight.travelTo}">Arrival</td>
-                <td th:text="${flight.dateOfDeparture}">Departing</td>
-                <td th:text="${flight.dateOfReturning}">Returning</td>
-                <td th:text="${flight.confirmationNumber}">Confirmation Number</td>
-                <td><a th:href="@{'/edit/' + ${flight.id}}">Edit</a></td>
-<!--            </tr>-->
+            <tbody>
+            <td th:text="${booking.passFirstName}">First Name</td>
+            <td th:text="${booking.passLastName}">Last Name</td>
+            <td th:text="${booking.travelFrom}">Depart</td>
+            <td th:text="${booking.travelTo}">Arrival</td>
+            <td th:text="${booking.dateOfDeparture}">Departing</td>
+            <td th:text="${booking.dateOfReturning}">Returning</td>
+            <td th:text="${confirmationNumber}">Confirmation Number</td>
+            <td><a th:href="@{'/edit/' + ${booking.id}}">Edit</a></td>
             </tbody>
         </table>
     </div>
     <a class="button" th:href="@{/home/booking_flight/thank_you}">Submit</a>
 </div>
 </body>
+</html>

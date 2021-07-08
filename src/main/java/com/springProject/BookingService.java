@@ -1,5 +1,6 @@
 package com.springProject;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class BookingService {
     }
 
     public void save(Booking booking) {
+        System.out.println(booking.toString());
         repo.save(booking);
     }
 
@@ -42,5 +44,23 @@ public class BookingService {
 
     public List<Booking> getUsersByUserId(Long Id) {
         return repo.findByUserId(Id);
+    }
+
+    public String update(long oldId, Booking booking) {
+        Optional<Booking> possibleSheet = repo.findById(oldId);
+        Booking oldBooking;
+        if (possibleSheet.isPresent()) {
+            oldBooking = possibleSheet.get();
+            oldBooking.setPassFirstName(booking.getPassFirstName());
+            oldBooking.setPassLastName(booking.getPassLastName());
+            oldBooking.setTravelFrom(booking.getTravelFrom());
+            oldBooking.setTravelTo(booking.getTravelTo());
+            oldBooking.setDateOfDeparture(booking.getDateOfDeparture());
+            oldBooking.setDateOfReturning(booking.getDateOfReturning());
+
+            repo.save(oldBooking);
+            return oldBooking.getConfirmationNumber();
+        }
+        return "";
     }
 }

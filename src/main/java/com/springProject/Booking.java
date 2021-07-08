@@ -35,6 +35,17 @@ public class Booking {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime dateOfReturning;
 
+    @Column(name="confirmation_number")
+    private String confirmationNumber;
+
+    public String getConfirmationNumber() {
+        return confirmationNumber;
+    }
+
+    public void setConfirmationNumber(String confirmationNumber) {
+        this.confirmationNumber = confirmationNumber;
+    }
+
 //    @Column(name = "returning", nullable = false, length = 100)
 //    private String passReturning;
 
@@ -94,27 +105,26 @@ public class Booking {
         this.dateOfReturning = dateOfReturning;
     }
 
-//    public String getPassDeparting() {
-//        return passDeparting;
-//    }
-//
-//    public void setPassDeparting(String passDeparting) {
-//        this.passDeparting = passDeparting;
-//    }
-//
-//    public String getPassReturning() {
-//        return passReturning;
-//    }
-//
-//    public void setPassReturning(String passReturning) {
-//        this.passReturning = passReturning;
-//    }
-
     public Long getUserId() {
         return userId;
     }
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", passFirstName='" + passFirstName + '\'' +
+                ", passLastName='" + passLastName + '\'' +
+                ", travelFrom='" + travelFrom + '\'' +
+                ", travelTo='" + travelTo + '\'' +
+                ", dateOfDeparture=" + dateOfDeparture +
+                ", dateOfReturning=" + dateOfReturning +
+                ", confirmationNumber='" + confirmationNumber + '\'' +
+                '}';
     }
 }

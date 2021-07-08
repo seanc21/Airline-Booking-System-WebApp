@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.awt.print.Book;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Controller
 public class AppController {
@@ -52,7 +53,7 @@ public class AppController {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepo.save(user);
-        return "register_success";
+        return "register_success.html";
     }
 
     @GetMapping("/home/booking_flight/create")
@@ -76,15 +77,33 @@ public class AppController {
         return mav;
     }
 
+    @RequestMapping(value = "/edit/{id}/edit_success", method = RequestMethod.POST)
+    public String editSuccess(@PathVariable(name = "id") int id, Booking booking, Model model) {
+        System.out.println(booking);
+        model.addAttribute("confirmationNumber", bookingService.update(id, booking));
+        return "edit_success.html";
+    }
+
     @PostMapping("/home/booking_flight/success")
     public String processBooking(Booking booking, @AuthenticationPrincipal CustomUserDetails userDetails, Model model) {
         Long userId = userDetails.getUserId();
         booking.setUserId(userId);
-        bookingRepo.save(booking);
-//        List<Booking> bookingList = bookingRepo.findAll();
-//        model.addAttribute("bookingList", bookingList);
-
+        int length = 6;
+        String code = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; // 36 letter.
+        StringBuilder randomCode = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            randomCode.append(code.charAt(random.nextInt(code.length())));
+        }
+        booking.setConfirmationNumber(randomCode.toString());
+        bookingService.save(booking);
+        model.addAttribute("flight", booking);
         return "booking_success.html";
+    }
+
+    @GetMapping("/home/booking_flight/thank_you")
+    public String thankYouPage() {
+        return "booking_thankyou.html";
     }
 
     @GetMapping("/home/booked_flights")
@@ -96,4 +115,8 @@ public class AppController {
         return "booked_flights.html";
     }
 
+    @GetMapping("/home/check-in")
+    public String checkIn(Booking booking, Model model) {
+        return "check_in.html";
+    }
 }

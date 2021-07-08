@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(#8693ab, #bdd4e7);
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 10px 5px 5px black;
+    opacity: 0.8;
+}
