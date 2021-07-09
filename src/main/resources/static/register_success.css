@@ -20,7 +20,7 @@ h1{
     font-family: 'Kaushan Script', cursive;
     font-size:4em;
     letter-spacing:3px;
-    color:#fff;
+    color: #202020;
     margin:0;
     margin-bottom:20px;
 }
@@ -28,7 +28,7 @@ h1{
 .wrapper-2 p{
     margin:0;
     font-size:1.3em;
-    color:#0471A6;
+    color: #202020;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing:1px;
     margin-bottom: 23px;
@@ -36,7 +36,7 @@ h1{
 
 .go-home{
     color:#fff;
-    background:#0471A6;
+    background:#24a0ed;
     border:none;
     padding:10px 50px;
     margin:30px 0;

@@ -22,6 +22,7 @@
                 <a class="nav-link" th:href="@{/home/check-in}">Check In</a>
             </div>
         </div>
+        <a class="nav-link ms-5" th:href="@{/logout}">Logout</a>
     </div>
 </nav>
 <div id="booking" class="section">
@@ -56,8 +57,8 @@
                                     <div class="col-75">
                                         <span class="form-label">From*</span>
                                         <select class="form-control" placeholder="Travel From" th:field="*{travelFrom}">
-                                            <option value="Birmingham BHM">Birmingham BHM</option>
                                             <option value="Memphis MEM">Memphis MEM</option>
+                                            <option value="Birmingham BHM">Birmingham BHM</option>
                                             <option value="Atlanta ATL">Atlanta ATL</option>
                                         </select>
                                         <span class="select-arrow"></span>

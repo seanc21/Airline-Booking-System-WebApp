@@ -66,11 +66,12 @@
 
 #title-description-home {
     position: absolute;
-    bottom: 300px;
-    left: 550px;
+    bottom: 320px;
+    left: 450px;
     color: white;
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Dancing Script', cursive;
+    font-weight: border;
 }
 
 #bar {
